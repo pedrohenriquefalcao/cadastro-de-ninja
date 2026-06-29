@@ -1,6 +1,9 @@
-package com.batismodejava.cadastro_de_ninja;
+package com.batismodejava.cadastro_de_ninja.Ninjas;
 
+import com.batismodejava.cadastro_de_ninja.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 
 @Entity
@@ -14,6 +17,7 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    private List<MissoesModel> missoes;
 
     public NinjaModel() {
     }
