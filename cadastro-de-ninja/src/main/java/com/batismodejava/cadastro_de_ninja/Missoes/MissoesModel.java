@@ -2,11 +2,17 @@ package com.batismodejava.cadastro_de_ninja.Missoes;
 
 import com.batismodejava.cadastro_de_ninja.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missões")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class MissoesModel {
 
     @Id
@@ -18,27 +24,5 @@ public class MissoesModel {
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninjas;
 
-    public MissoesModel() {
-    }
 
-    public MissoesModel(int nivelDificuldade, String titulo) {
-        this.nivelDificuldade = nivelDificuldade;
-        this.titulo = titulo;
-    }
-
-    public int getNivelDificuldade() {
-        return nivelDificuldade;
-    }
-
-    public void setNivelDificuldade(int nivelDificuldade) {
-        this.nivelDificuldade = nivelDificuldade;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 }
