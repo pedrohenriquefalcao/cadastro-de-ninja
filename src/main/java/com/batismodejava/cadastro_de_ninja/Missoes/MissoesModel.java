@@ -1,6 +1,7 @@
 package com.batismodejava.cadastro_de_ninja.Missoes;
 
 import com.batismodejava.cadastro_de_ninja.Ninjas.NinjaModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,6 +24,7 @@ public class MissoesModel {
     private int nivelDificuldade;
 
     @OneToMany(mappedBy = "missoes")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 
 
